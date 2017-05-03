@@ -1,0 +1,19 @@
+<div>
+  <form name="sentenceform" class="quizForm" id="sentenceform">
+    <label class="sample">
+      {{sentence}}
+      </label>
+    <br />
+    <div>
+      <br />
+      <input ng-model="input" class="inputArea" type="text" id="inputSentenceTextBox" uppercased></input>
+      <span ng-show="input==sentence" class="glyphicon glyphicon-ok resultIcon resultIcon-ok" aria-hidden="true"></span>
+      <span ng-show="input!=sentence && sentenceform.$submitted" class="glyphicon glyphicon-remove resultIcon resultIcon-wrong" aria-hidden="true"></span>
+      <br />
+    </div> 
+    <br />
+    <input ng-hide="input==sentence" class="btn btn-primary" type="submit" id="checkButton" value="Check!" />
+    <button ng-click="tryNextSentenceClicked(sentenceform)" class="btn" ng-class="input==word?'btn-success':'btn-info'" type="button" id="tryNextButton" value"Try Another">Try Another </button>
+    <br />
+  </form>
+</div>
